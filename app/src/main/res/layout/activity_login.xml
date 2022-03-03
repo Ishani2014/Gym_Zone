@@ -85,7 +85,7 @@
            android:textSize="15dp"
            android:gravity="right"
            android:layout_marginRight="30dp"
-           android:id="@+id/edt_password"
+           android:id="@+id/tv_forgot"
            />
 
         <Button

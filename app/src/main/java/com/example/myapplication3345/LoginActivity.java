@@ -1,10 +1,14 @@
 package com.example.myapplication3345;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +16,7 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,7 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText email, password;
     Button login;
     LinearLayout createAccount;
-
+   TextView Forgat;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     String PasswordPattern = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{4,}$";
 
@@ -34,9 +39,33 @@ public class LoginActivity extends AppCompatActivity {
         email = findViewById(R.id.login_email);
         password = findViewById(R.id.login_password);
         login = findViewById(R.id.login_button);
-
+        Forgat = findViewById(R.id.tv_forgot);
         createAccount = findViewById(R.id.login_create_account);
 
+        Forgat.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                LayoutInflater layoutInflater = (LayoutInflater) getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+                View fpView = layoutInflater.inflate(R.layout.raw_fp, null);
+                EditText edtFpEmail = fpView.findViewById(R.id.login_email);
+                Button btnSubmit = fpView.findViewById(R.id.btn_submit);
+                AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+                AlertDialog alertDialog = builder.create();
+                alertDialog.setView(fpView);
+                alertDialog.show();
+
+                btnSubmit.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(LoginActivity.this, "Submit", Toast.LENGTH_SHORT).show();
+
+                        if(alertDialog.isShowing()){
+                            alertDialog.dismiss();
+                        }
+                    }
+                });
+            }
+        });
 
         createAccount.setOnClickListener(new View.OnClickListener() {
             @Override
