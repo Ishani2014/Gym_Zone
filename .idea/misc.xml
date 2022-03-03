@@ -3,6 +3,19 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/drawable/custom_border.xml" value="0.126" />
+        <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/drawable/custom_button.xml" value="0.126" />
+        <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/drawable/ic_baseline_calendar_month_24.xml" value="0.126" />
+        <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.126" />
+        <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.126" />
+        <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/drawable/ic_baseline_remove_red_eye_24.xml" value="0.126" />
+        <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/drawable/ic_baseline_visibility_off_24.xml" value="0.126" />
+        <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/layout/activity_signup.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/layout/activity_splash.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/layout/raw_fp.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/MyApplication3345/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.143" />
         <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/MyApplication3345/app/src/main/res/drawable/custom_border.xml" value="0.143" />
         <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/MyApplication3345/app/src/main/res/drawable/custom_button.xml" value="0.143" />

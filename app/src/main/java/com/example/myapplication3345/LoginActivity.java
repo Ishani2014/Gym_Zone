@@ -21,6 +21,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText email, password;
     Button login;
     LinearLayout createAccount;
+
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     String PasswordPattern = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{4,}$";
 
@@ -33,7 +34,9 @@ public class LoginActivity extends AppCompatActivity {
         email = findViewById(R.id.login_email);
         password = findViewById(R.id.login_password);
         login = findViewById(R.id.login_button);
+
         createAccount = findViewById(R.id.login_create_account);
+
 
         createAccount.setOnClickListener(new View.OnClickListener() {
             @Override
