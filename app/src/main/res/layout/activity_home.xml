@@ -1,29 +1,288 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HomeActivity">
-    <FrameLayout
-        android:id="@+id/flFragment"
+    android:background="#eff3f4"
+    tools:context=".measurement">
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
+            <com.smarteist.autoimageslider.SliderView
+                android:id="@+id/slider"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                app:sliderAnimationDuration="600"
+                app:sliderAutoCycleDirection="back_and_forth"
+                app:sliderIndicatorAnimationDuration="600"
+                app:sliderIndicatorEnabled="true"
+                app:sliderIndicatorGravity="center_horizontal|bottom"
+                app:sliderIndicatorMargin="15dp"
+                app:sliderIndicatorOrientation="horizontal"
+                app:sliderIndicatorPadding="3dp"
+                app:sliderIndicatorRadius="2dp"
+                app:sliderIndicatorSelectedColor="#5A5A5A"
+                app:sliderIndicatorUnselectedColor="#FFF"
+                app:sliderScrollTimeInSec="1" />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="200dp"
+        android:background="#eff3f4"
+        app:layout_constraintHorizontal_bias="0.5">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:overScrollMode="always"
+            >
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:background="@drawable/custom_borderwhite"
+                    android:id="@+id/card_activity"
+                    android:padding="10dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/home_activity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp">
+
+                        <ImageView
+                            android:id="@+id/image_activite"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:src="@drawable/acti"/>
+
+                        <TextView
+                            android:id="@+id/txtName_activite"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_light"
+                            android:gravity="center_horizontal"
+                            android:paddingRight="40dp"
+                            android:text="ACTIVITY"
+                            android:textColor="@color/black"
+                            android:textSize="28dp" />
+
+                        <TextView
+                            android:id="@+id/txtline_activity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_below="@+id/image_activite"
+                            android:layout_marginLeft="80dp"
+                            android:layout_marginTop="-32dp"
+                            android:text="Access activity information"
+                            android:textColor="@color/gray"
+                            android:textSize="18dp"
+                            android:fontFamily="@font/montserrat_light"/>
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:background="@drawable/custom_borderwhite"
+                    android:id="@+id/card_mem"
+                    android:padding="10dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/home_mem"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp">
+
+                        <ImageView
+                            android:id="@+id/image_mem"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:src="@drawable/mem"/>
+
+                        <TextView
+                            android:id="@+id/txtName_mem"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_light"
+                            android:gravity="center_horizontal"
+                            android:paddingRight="20dp"
+                            android:text="MEMBERS"
+                            android:textColor="@color/black"
+                            android:textSize="28dp" />
+
+                        <TextView
+                            android:id="@+id/txtline_mem"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_below="@+id/image_activite"
+                            android:layout_marginLeft="80dp"
+                            android:layout_marginTop="40dp"
+                            android:text="Access member details"
+                            android:textColor="@color/gray"
+                            android:textSize="18dp"
+                            android:fontFamily="@font/montserrat_light"/>
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:background="@drawable/custom_borderwhite"
+                    android:id="@+id/card_add"
+                    android:padding="10dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/home_add"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp">
+
+                        <ImageView
+                            android:id="@+id/image_add"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:src="@drawable/add"/>
+
+                        <TextView
+                            android:id="@+id/txtName_add"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_light"
+                            android:gravity="center_horizontal"
+                            android:paddingRight="-40dp"
+                            android:text="ADD MEMBER"
+                            android:textColor="@color/black"
+                            android:textSize="28dp" />
+
+                        <TextView
+                            android:id="@+id/txtline_add"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_below="@+id/image_activite"
+                            android:layout_marginLeft="80dp"
+                            android:layout_marginTop="40dp"
+                            android:text="Add members to group"
+                            android:textColor="@color/gray"
+                            android:textSize="18dp"
+                            android:fontFamily="@font/montserrat_light"/>
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:background="@drawable/custom_borderwhite"
+                    android:id="@+id/card_enq"
+                    android:padding="10dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/home_enq"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_margin="10dp">
+
+                        <ImageView
+                            android:id="@+id/image_enq"
+                            android:layout_width="75dp"
+                            android:layout_height="75dp"
+                            android:src="@drawable/enq" />
+
+                        <TextView
+                            android:id="@+id/txtName_enq"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/montserrat_light"
+                            android:gravity="center_horizontal"
+                            android:layout_marginRight="40dp"
+                            android:text="ENQUIRY"
+                            android:textColor="@color/black"
+                            android:textSize="28dp" />
+
+                        <TextView
+                            android:id="@+id/txtline_enq"
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:layout_below="@+id/image_activite"
+                            android:layout_marginLeft="80dp"
+                            android:layout_marginTop="40dp"
+                            android:text="Solve you quaries here"
+                            android:textColor="@color/gray"
+                            android:textSize="18dp"
+                            android:fontFamily="@font/montserrat_light"/>
+                    </RelativeLayout>
+
+
+                </RelativeLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:gravity="center_vertical"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginHorizontal="10dp"
+                    android:background="#eff3f4"
+                    android:id="@+id/llRow"
+                    android:padding="10dp"
+                    android:orientation="vertical">
+
+                    <RelativeLayout
+                        android:id="@+id/home_activity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="10dp">
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+    </FrameLayout>
+        </RelativeLayout>
+    </ScrollView>
     <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="75dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:menu="@menu/bottom_nav_menu"/>
+        android:id="@+id/bottom_navigator"
+        app:itemBackground="@color/white"
+        app:itemTextColor="@drawable/item_selector"
+        app:itemIconTint="@drawable/item_selector"
+        app:menu="@menu/bottom_nav_menu"
+        android:layout_alignParentBottom="true"/>
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

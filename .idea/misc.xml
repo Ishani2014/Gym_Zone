@@ -4,18 +4,28 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/drawable/custom_border.xml" value="0.126" />
+        <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/drawable/custom_borderwhite.xml" value="0.114" />
         <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/drawable/custom_button.xml" value="0.126" />
         <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/drawable/ic_baseline_calendar_month_24.xml" value="0.126" />
+        <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/drawable/ic_baseline_email_24.xml" value="0.11" />
         <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.126" />
         <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/drawable/ic_baseline_person_24.xml" value="0.126" />
         <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/drawable/ic_baseline_remove_red_eye_24.xml" value="0.126" />
         <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/drawable/ic_baseline_visibility_off_24.xml" value="0.126" />
-        <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/layout/activity_home.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/drawable/item_selector.xml" value="0.11" />
+        <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/layout/activity.xml" value="0.19384057971014493" />
+        <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/layout/activity_.xml" value="0.24818840579710144" />
+        <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/layout/activity_home.xml" value="0.264" />
         <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/layout/activity_login.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/layout/activity_measurement.xml" value="0.16" />
+        <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/layout/activity_profile.xml" value="0.136" />
         <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/layout/activity_signup.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/layout/activity_splash.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/layout/raw_fp.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/layout/raw_fp.xml" value="0.1" />
+        <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/layout/slider_layout.xml" value="0.14583333333333334" />
+        <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/menu/activity.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/menu/bottom_nav_menu.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/Gym_Zone/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.114" />
         <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/MyApplication3345/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.143" />
         <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/MyApplication3345/app/src/main/res/drawable/custom_border.xml" value="0.143" />
         <entry key="..\:/Users/Dhruvil/AndroidStudioProjects/MyApplication3345/app/src/main/res/drawable/custom_button.xml" value="0.143" />

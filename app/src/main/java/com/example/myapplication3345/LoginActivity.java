@@ -41,7 +41,6 @@ public class LoginActivity extends AppCompatActivity {
         login = findViewById(R.id.login_button);
         Forgat = findViewById(R.id.tv_forgot);
         createAccount = findViewById(R.id.login_create_account);
-
         Forgat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
