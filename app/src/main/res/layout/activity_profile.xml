@@ -9,7 +9,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="horizontal">
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -71,7 +70,7 @@
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/montserrat_light"
                         android:paddingTop="10dp"
-                        android:text="Zeel Mistry"
+                        android:text="Dhruvil Patel"
                         android:textColor="@color/red"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -100,17 +99,18 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:paddingLeft="20dp"
-                android:text="zeelmistry60@gmail.com"
+                android:text="dhruvilspatel007@gmail.com"
                 android:textStyle="bold"
                 android:fontFamily="@font/montserrat_light" android:textSize="15dp"/>
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_below="@+id/email"
             android:layout_marginTop="25dp"
             android:orientation="horizontal"
-            android:layout_below="@+id/email"
             android:paddingLeft="25dp">
 
             <ImageView
@@ -122,10 +122,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:fontFamily="@font/montserrat_light"
                 android:paddingLeft="20dp"
-                android:text="+917046986451"
-                android:textStyle="bold"
-                android:fontFamily="@font/montserrat_light" android:textSize="15dp"/>
+                android:text="+918140463345"
+                android:textSize="15dp"
+                android:textStyle="bold" />
         </LinearLayout>
 
         <LinearLayout
@@ -144,7 +145,6 @@
 
             <TextView
                 android:layout_width="299dp"
-
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
                 android:fontFamily="@font/montserrat_light"

@@ -26,10 +26,12 @@ BottomNavigationView bottomNavigationView;
                 switch (item.getItemId()){
                     case R.id.measurement:
                         startActivity(new Intent(getApplicationContext(),measurement.class));
+                        finish();
                         overridePendingTransition(0,0);
                         return true;
                     case R.id.home:
                         startActivity(new Intent(getApplicationContext(),HomeActivity.class));
+                        finish();
                         overridePendingTransition(0,0);
                         return true;
 

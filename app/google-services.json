@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "62821805137",
+    "project_id": "gymzone-5a983",
+    "storage_bucket": "gymzone-5a983.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:62821805137:android:ac56ad3e2dbae24be25c70",
+        "android_client_info": {
+          "package_name": "com.example.myapplication3345"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "62821805137-d0cm0pvllad0odf0n5fvae36fuukqoci.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBQR6OTtBJQyL_TFu3hpjAXlq8S8WFKEfk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "62821805137-d0cm0pvllad0odf0n5fvae36fuukqoci.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

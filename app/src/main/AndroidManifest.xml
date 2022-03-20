@@ -12,6 +12,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:theme="@style/Theme.MyApplication3345">
         <activity
+            android:name=".Enquiry"
+            android:exported="false" />
+        <activity
+            android:name=".Members"
+            android:exported="false" />
+        <activity
+            android:name=".Add_Member"
+            android:exported="false" />
+        <activity
             android:name=".Activity"
             android:exported="false" />
         <activity

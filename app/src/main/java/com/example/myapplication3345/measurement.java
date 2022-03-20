@@ -77,11 +77,13 @@ public class measurement extends Activity {
                         return true;
                     case R.id.home:
                         startActivity(new Intent(measurement.this,HomeActivity.class));
+                        finish();
                         overridePendingTransition(0,0);
                         return true;
 
                     case R.id.profile:
                         startActivity(new Intent(measurement.this,profile.class));
+                        finish();
                         overridePendingTransition(0,0);
                         return true;
                 }

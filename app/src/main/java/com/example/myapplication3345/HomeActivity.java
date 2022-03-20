@@ -37,34 +37,36 @@ public class HomeActivity extends AppCompatActivity {
 
                 Intent intent = new Intent(HomeActivity.this, Activity.class);
                 startActivity(intent);
-                //  new Comman_Method(LoginActivity.this, "SignUP");
+
+
             }
         });
         card_mem.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(HomeActivity.this, SignupActivity.class);
+                Intent intent = new Intent(HomeActivity.this, Members.class);
                 startActivity(intent);
-                //  new Comman_Method(LoginActivity.this, "SignUP");
+
+
             }
         });
         card_add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(HomeActivity.this, SignupActivity.class);
+                Intent intent = new Intent(HomeActivity.this, Add_Member.class);
                 startActivity(intent);
-                //  new Comman_Method(LoginActivity.this, "SignUP");
+
             }
         });
         card_enq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(HomeActivity.this, SignupActivity.class);
+                Intent intent = new Intent(HomeActivity.this, Enquiry.class);
                 startActivity(intent);
-                //  new Comman_Method(LoginActivity.this, "SignUP");
+
             }
         });
         // we are creating array list for storing our image urls.
@@ -113,11 +115,13 @@ public class HomeActivity extends AppCompatActivity {
                         return true;
                     case R.id.measurement:
                         startActivity(new Intent(HomeActivity.this,measurement.class));
+                        finish();
                         overridePendingTransition(0,0);
                         return true;
 
                     case R.id.profile:
                         startActivity(new Intent(HomeActivity.this,profile.class));
+                        finish();
                         overridePendingTransition(0,0);
                         return true;
                 }
