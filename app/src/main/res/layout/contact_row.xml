@@ -2,10 +2,17 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="10dp"
+    app:cardElevation="10dp"
+    app:cardPreventCornerOverlap="true"
+    app:cardUseCompatPadding="true"
     android:layout_margin="2dp">
     <TextView
-        android:layout_width="20dp"
+        android:layout_width="30dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="3dp"
         android:text="&#8942;"
         android:textSize="20sp"
         android:id="@+id/txt_option"
@@ -43,6 +50,7 @@
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/montserrat_regular"
                 android:text="Text"
+                android:layout_marginBottom="5dp"
                 android:textSize="20dp"
                 android:id="@+id/txt_email"
                 />

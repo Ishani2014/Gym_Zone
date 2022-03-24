@@ -38,6 +38,7 @@ public class Members extends AppCompatActivity
         recyclerView.setAdapter(adapter);
         dao = new DAOEmployee();
         loadData();
+
         recyclerView.addOnScrollListener(new RecyclerView.OnScrollListener()
         {
             @Override

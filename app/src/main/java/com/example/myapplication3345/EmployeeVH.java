@@ -17,6 +17,6 @@ public class EmployeeVH extends RecyclerView.ViewHolder
         txt_position = itemView.findViewById(R.id.txt_position);
         txt_option = itemView.findViewById(R.id.txt_option);
         txt_email = itemView.findViewById(R.id.txt_email);
-        txt_address = itemView.findViewById(R.id.edt_Address);
+        txt_address = itemView.findViewById(R.id.txt_address);
     }
 }

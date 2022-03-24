@@ -5,6 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".profile">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -166,6 +172,8 @@
     </RelativeLayout>
 
 </LinearLayout>
+        </RelativeLayout>
+    </ScrollView>
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:layout_width="match_parent"
         android:layout_height="75dp"
@@ -175,5 +183,4 @@
         app:itemIconTint="@drawable/item_selector"
         app:menu="@menu/bottom_nav_menu"
         android:layout_alignParentBottom="true"/>
-
 </RelativeLayout>
