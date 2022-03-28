@@ -3,6 +3,7 @@ package com.example.myapplication3345;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
@@ -16,7 +17,18 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class LoginActivity extends AppCompatActivity {
     String TAG = LoginActivity.class.getSimpleName();
@@ -26,6 +38,9 @@ public class LoginActivity extends AppCompatActivity {
     TextView Forgat;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     String PasswordPattern = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{4,}$";
+    private FirebaseAuth firebaseAuth;
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +53,12 @@ public class LoginActivity extends AppCompatActivity {
         login = findViewById(R.id.login_button);
         Forgat = findViewById(R.id.tv_forgot);
         createAccount = findViewById(R.id.login_create_account);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance("https://gymzone-5a983-default-rtdb.firebaseio.com/");
+        databaseReference = firebaseDatabase.getReference("SignUp");
+
+
         Forgat.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -83,18 +104,51 @@ public class LoginActivity extends AppCompatActivity {
                     email.setError("Valid Email Id Required ");
                 } else if (password.getText().toString().trim().equals("")) {
                     password.setError("password Required");
-                } else if (!password.getText().toString().trim().matches(PasswordPattern)) {
+             /*   } else if (!password.getText().toString().trim().matches(PasswordPattern)) {
                     password.setError("strong password Required");
-                } else {
+               */ } else {
                     Log.e(TAG, "onClick: Login_Account");
-                    if (email.getText().toString().trim().equals("dhruvilspatel007@gmail.com")
-                            && password.getText().toString().equalsIgnoreCase("Dhruvil@2014")) {
                         Log.d("Login", "Login Successfully");
-                        new Comman_Method(LoginActivity.this, HomeActivity.class);
-                        finish();
-                    } else {
-                        Log.d("Login", "Login Unsuccessfully");
-                    }
+                    /*    new Comman_Method(LoginActivity.this, HomeActivity.class);
+                        finish();*/
+                    firebaseAuth.signInWithEmailAndPassword(email.getText().toString(),password.getText().toString())
+                            .addOnCompleteListener(LoginActivity.this, new OnCompleteListener<AuthResult>() {
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+
+                                    if (task.isSuccessful()){
+
+                                        String strUID = firebaseAuth.getUid();
+
+                                        databaseReference.child(strUID).addListenerForSingleValueEvent(new ValueEventListener() {
+                                            @Override
+                                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                                                SignUpModel registerModel = dataSnapshot.getValue(SignUpModel.class);
+                                                String loginEmail = registerModel.getEmail();
+
+                                                SharedPreferences sharedPreferences = getSharedPreferences("MyAPP_GYM", MODE_PRIVATE);
+                                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                                editor.putString("KEY_PREF_EMAIL", loginEmail);
+                                                editor.commit();
+
+                                                // Explicit Intent
+                                                Intent i = new Intent(LoginActivity.this, HomeActivity.class);
+                                                i.putExtra("KEY_EMAIL", loginEmail);
+                                                startActivity(i);
+                                                finish();
+                                                // Over Explicit Intent
+                                            }
+                                            @Override
+                                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                                            }
+                                        });
+                                    }
+                                }
+                            });
+
+
                 }
             }
 

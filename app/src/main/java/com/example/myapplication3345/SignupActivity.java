@@ -1,11 +1,12 @@
 package com.example.myapplication3345;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
+import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -18,11 +19,20 @@ import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
-import android.text.method.HideReturnsTransformationMethod;
-import android.text.method.PasswordTransformationMethod;
 import android.widget.TextView;
-import com.example.myapplication3345.Comman_Method;
-import com.example.myapplication3345.LoginActivity;
+import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -39,7 +49,10 @@ public class  SignupActivity extends AppCompatActivity {
     Calendar calendar;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     String passwordPattern = "(?=.*[0-9])(?=.*[a-z])(?=\\S+$).{6,10}";
+    private FirebaseDatabase firebaseDatabase;
+    private DatabaseReference databaseReference;
 
+    FirebaseAuth firebaseAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -57,6 +70,11 @@ public class  SignupActivity extends AppCompatActivity {
         signup = findViewById(R.id.btsignup);
         gender = findViewById(R.id.gender);
         state = findViewById(R.id.spinner_state);
+
+        firebaseAuth = FirebaseAuth.getInstance();
+        firebaseDatabase = FirebaseDatabase.getInstance("https://gymzone-5a983-default-rtdb.firebaseio.com/");
+        databaseReference = firebaseDatabase.getReference("SignUp");
+
         gender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(RadioGroup radioGroup, int i) {
@@ -125,8 +143,8 @@ public class  SignupActivity extends AppCompatActivity {
                     contact.setError("Valid Contact No. Required");
                 } else if (password.getText().toString().trim().equalsIgnoreCase("")) {
                     password.setError("Password Required");
-                } else if (!password.getText().toString().trim().matches(passwordPattern)) {
-                    password.setError("Strong Password Required");
+               /* } else if (!password.getText().toString().trim().matches(passwordPattern)) {
+                    password.setError("Strong Password Required");*/
                 } else if (confirmPassword.getText().toString().trim().equalsIgnoreCase("")) {
                     confirmPassword.setError("Confirm Password Required");
                 } else if (!confirmPassword.getText().toString().matches(password.getText().toString())) {
@@ -137,7 +155,38 @@ public class  SignupActivity extends AppCompatActivity {
                     new Comman_Method(SignupActivity.this, "Please Select Gender");
                 } else {
                     new Comman_Method(SignupActivity.this, "Signup Successfully");
-                    onBackPressed();
+
+                    int genderID = gender.getCheckedRadioButtonId();
+                    RadioButton radioButton = findViewById(genderID);
+                    String strEmail = email.getText().toString();
+                    String strPassword = confirmPassword.getText().toString();
+                    String strName = name.getText().toString();
+                    String strContact = contact.getText().toString();
+                    String strDOB = dob.getText().toString();
+                    String strGender = radioButton.getText().toString();
+
+                    firebaseAuth.createUserWithEmailAndPassword(strEmail,strPassword).addOnCompleteListener(SignupActivity.this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+
+                            if (task.isSuccessful()){
+                                String uID = firebaseAuth.getUid();
+                                Log.e("SIGNUP_ACTIVITY", "onComplete: "+uID );
+                                Toast.makeText(SignupActivity.this, ""+uID, Toast.LENGTH_SHORT).show();
+                                SignUpModel  registerModel = new SignUpModel();
+                                registerModel.setUserId(uID);
+                                registerModel.setUserName(strName);
+                                registerModel.setEmail(strEmail);
+                                registerModel.setPassword(strPassword);
+                                registerModel.setContactNo(strContact);
+                                registerModel.setUserDOB(strDOB);
+                                databaseReference.child(uID).setValue(registerModel);
+                                Intent i = new Intent(SignupActivity.this,LoginActivity.class);
+                                startActivity(i);
+                                finish();
+                            }
+                        }
+                    });
                 }
             }
         });

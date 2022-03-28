@@ -1,6 +1,7 @@
 package com.example.myapplication3345;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.animation.AlphaAnimation;
@@ -25,13 +26,23 @@ public class splashActivity extends AppCompatActivity {
         imageView.startAnimation(animation);
         textView.startAnimation(animation);
 
-
+        SharedPreferences sharedPreferences = getSharedPreferences("MyAPP_GYM", MODE_PRIVATE);
+        String strEmail = sharedPreferences.getString("KEY_PREF_EMAIL", "");
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
-                Intent intent = new Intent(splashActivity.this,LoginActivity.class);
+                /*Intent intent = new Intent(splashActivity.this,LoginActivity.class);
                 startActivity(intent);
-                finish();
+                finish();*/
+                if (strEmail.equals("")){
+            Intent i = new Intent(splashActivity.this,LoginActivity.class);
+            startActivity(i);
+            finish();
+        }else {
+            Intent i = new Intent(splashActivity.this,HomeActivity.class);
+            startActivity(i);
+            finish();
+        }
             }
         }, 1000);
     }
