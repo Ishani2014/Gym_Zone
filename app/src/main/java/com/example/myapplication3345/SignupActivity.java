@@ -154,7 +154,7 @@ public class  SignupActivity extends AppCompatActivity {
                 } else if (gender.getCheckedRadioButtonId() == -1) {
                     new Comman_Method(SignupActivity.this, "Please Select Gender");
                 } else {
-                    new Comman_Method(SignupActivity.this, "Signup Successfully");
+
 
                     int genderID = gender.getCheckedRadioButtonId();
                     RadioButton radioButton = findViewById(genderID);
@@ -172,6 +172,7 @@ public class  SignupActivity extends AppCompatActivity {
                             if (task.isSuccessful()){
                                 String uID = firebaseAuth.getUid();
                                 Log.e("SIGNUP_ACTIVITY", "onComplete: "+uID );
+                                new Comman_Method(SignupActivity.this, "Signup Successfully");
                                 Toast.makeText(SignupActivity.this, ""+uID, Toast.LENGTH_SHORT).show();
                                 SignUpModel  registerModel = new SignUpModel();
                                 registerModel.setUserId(uID);
