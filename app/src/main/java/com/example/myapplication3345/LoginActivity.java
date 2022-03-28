@@ -1,7 +1,6 @@
 package com.example.myapplication3345;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,7 +8,6 @@ import android.text.method.HideReturnsTransformationMethod;
 import android.text.method.PasswordTransformationMethod;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -17,7 +15,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-import androidx.annotation.NonNull;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 public class LoginActivity extends AppCompatActivity {
@@ -25,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
     EditText email, password;
     Button login;
     LinearLayout createAccount;
-   TextView Forgat;
+    TextView Forgat;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     String PasswordPattern = "^(?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=!])(?=\\S+$).{4,}$";
 
@@ -71,7 +69,7 @@ public class LoginActivity extends AppCompatActivity {
                 Log.e(TAG, "onClick: Create_Account");
                 Intent intent = new Intent(LoginActivity.this, SignupActivity.class);
                 startActivity(intent);
-            //  new Comman_Method(LoginActivity.this, "SignUP");
+                //  new Comman_Method(LoginActivity.this, "SignUP");
             }
         });
 
@@ -89,10 +87,11 @@ public class LoginActivity extends AppCompatActivity {
                     password.setError("strong password Required");
                 } else {
                     Log.e(TAG, "onClick: Login_Account");
-                    if (email.getText().toString().trim().equals("dhruvil@gmail.com")
+                    if (email.getText().toString().trim().equals("dhruvilspatel007@gmail.com")
                             && password.getText().toString().equalsIgnoreCase("Dhruvil@2014")) {
                         Log.d("Login", "Login Successfully");
                         new Comman_Method(LoginActivity.this, HomeActivity.class);
+                        finish();
                     } else {
                         Log.d("Login", "Login Unsuccessfully");
                     }

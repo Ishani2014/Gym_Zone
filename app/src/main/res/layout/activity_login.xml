@@ -76,17 +76,17 @@
                 android:padding="10dp"
                 android:src="@drawable/ic_baseline_remove_red_eye_24" />
         </RelativeLayout>
-       <TextView
-           android:layout_width="match_parent"
-           android:layout_height="wrap_content"
-           android:text="Forgot password?"
-           android:textColor="@color/white"
-           android:fontFamily="@font/montserrat"
-           android:textSize="15dp"
-           android:gravity="right"
-           android:layout_marginRight="30dp"
-           android:id="@+id/tv_forgot"
-           />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Forgot password?"
+            android:textColor="@color/white"
+            android:fontFamily="@font/montserrat"
+            android:textSize="15dp"
+            android:gravity="right"
+            android:layout_marginRight="30dp"
+            android:id="@+id/tv_forgot"
+            />
 
         <Button
             android:id="@+id/login_button"
@@ -131,5 +131,4 @@
             android:fontFamily="@font/montserrat"
             android:textColor="@color/red" />
     </LinearLayout>
-    </LinearLayout>
-
+</LinearLayout>

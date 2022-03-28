@@ -23,8 +23,26 @@
             android:textColor="@color/red"
             android:textSize="40dp"
             android:textStyle="bold" />
-        <EditText
+
+        <AutoCompleteTextView
+            android:id="@+id/atv"
+
             android:layout_below="@+id/txtTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Plan"
+            android:layout_marginHorizontal="20dp"
+            android:background="@drawable/custom_borderwhite"
+            android:textColorHint="@color/red"
+            android:textColor="@color/red"
+            android:fontFamily="@font/montserrat_light"
+            android:padding="11dp"
+            android:layout_marginBottom="11dp"
+            android:inputType="text"/>
+
+
+        <EditText
+            android:layout_below="@+id/atv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Enter Name"
@@ -32,25 +50,26 @@
             android:background="@drawable/custom_borderwhite"
             android:textColorHint="@color/red"
             android:textColor="@color/red"
-            android:fontFamily="@font/montserrat"
+            android:fontFamily="@font/montserrat_light"
             android:padding="11dp"
             android:id="@+id/edt_Name"
             android:layout_marginBottom="11dp"
             android:inputType="text"/>
+
         <EditText
-            android:layout_below="@+id/edt_Name"
+            android:id="@+id/edt_Number"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Enter Number"
+            android:layout_below="@+id/edt_Name"
             android:layout_marginHorizontal="20dp"
-            android:background="@drawable/custom_borderwhite"
-            android:textColorHint="@color/red"
-            android:textColor="@color/red"
-            android:fontFamily="@font/montserrat"
-            android:padding="11dp"
-            android:id="@+id/edt_Number"
             android:layout_marginBottom="11dp"
-            android:inputType="number"/>
+            android:background="@drawable/custom_borderwhite"
+            android:fontFamily="@font/montserrat_light"
+            android:hint="Enter Number"
+            android:inputType="number"
+            android:padding="11dp"
+            android:textColor="@color/red"
+            android:textColorHint="@color/red" />
         <EditText
             android:layout_below="@+id/edt_Number"
             android:layout_width="match_parent"
@@ -60,7 +79,7 @@
             android:background="@drawable/custom_borderwhite"
             android:textColorHint="@color/red"
             android:textColor="@color/red"
-            android:fontFamily="@font/montserrat"
+            android:fontFamily="@font/montserrat_light"
             android:padding="11dp"
             android:id="@+id/edt_Email"
             android:layout_marginBottom="11dp"
@@ -74,7 +93,7 @@
             android:background="@drawable/custom_borderwhite"
             android:textColorHint="@color/red"
             android:textColor="@color/red"
-            android:fontFamily="@font/montserrat"
+            android:fontFamily="@font/montserrat_light"
             android:padding="11dp"
             android:id="@+id/edt_Address"
             android:layout_marginBottom="11dp"

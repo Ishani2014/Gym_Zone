@@ -9,7 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 public class EmployeeVH extends RecyclerView.ViewHolder
 {
-    public TextView txt_name,txt_position,txt_option,txt_email,txt_address;
+    public TextView txt_name,txt_position,txt_option,txt_email,txt_address,txt_plan;
     public EmployeeVH(@NonNull View itemView)
     {
         super(itemView);
@@ -18,5 +18,6 @@ public class EmployeeVH extends RecyclerView.ViewHolder
         txt_option = itemView.findViewById(R.id.txt_option);
         txt_email = itemView.findViewById(R.id.txt_email);
         txt_address = itemView.findViewById(R.id.txt_address);
+        txt_plan = itemView.findViewById(R.id.txt_plan);
     }
 }

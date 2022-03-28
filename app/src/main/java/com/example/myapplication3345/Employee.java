@@ -14,13 +14,15 @@ public class Employee implements Serializable
     private String position;
     private String email;
     private String address;
+    private String plan;
     public Employee(){}
-    public Employee(String name, String position, String email,String address)
+    public Employee(String name, String position, String email,String address, String plan)
     {
         this.name = name;
         this.position = position;
         this.email = email;
         this.address = address;
+        this.plan = plan;
     }
 
     public String getName()
@@ -57,6 +59,15 @@ public class Employee implements Serializable
     public void setAddress(String address)
     {
         this.address = address;
+    }
+
+    public String getPlan()
+    {
+        return plan;
+    }
+    public void setPlan(String plan)
+    {
+        this.plan = plan;
     }
 
     public String getKey()

@@ -36,6 +36,14 @@
                 android:fontFamily="@font/montserrat_light"
                 android:textSize="50dp"
                 android:layout_marginBottom="5dp"
+                android:id="@+id/txt_plan"/>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Text"
+                android:fontFamily="@font/montserrat_regular"
+                android:textSize="20dp"
+                android:layout_marginBottom="5dp"
                 android:id="@+id/txt_name"/>
             <TextView
                 android:layout_width="match_parent"

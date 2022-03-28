@@ -49,6 +49,7 @@ public class RVAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>
         vh.txt_position.setText(emp.getPosition());
         vh.txt_email.setText(emp.getEmail());
         vh.txt_address.setText(emp.getAddress());
+        vh.txt_plan.setText(emp.getPlan());
         vh.txt_option.setOnClickListener(v->
         {
             PopupMenu popupMenu =new PopupMenu(context,vh.txt_option);
