@@ -1,13 +1,10 @@
 package com.example.myapplication3345;
 
 import com.google.firebase.database.Exclude;
-
 import java.io.Serializable;
 
 public class Employee implements Serializable
 {
-
-
     @Exclude
     private String key;
     private String name;

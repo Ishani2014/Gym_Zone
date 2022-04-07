@@ -40,12 +40,13 @@ import java.util.Locale;
 
 public class  SignupActivity extends AppCompatActivity {
     EditText name, email, contact, password, confirmPassword, dob;
-    Button login, signup;
+    Button  signup;
     ImageView dobIv;
     Spinner spinner, state;
     ArrayList<String> arrayList;
     ArrayList<String> stateArrayList;
     RadioGroup gender;
+
     Calendar calendar;
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     String passwordPattern = "(?=.*[0-9])(?=.*[a-z])(?=\\S+$).{6,10}";
@@ -66,7 +67,6 @@ public class  SignupActivity extends AppCompatActivity {
         confirmPassword = findViewById(R.id.sign_conpassword);
         dob = findViewById(R.id.etdob);
         dobIv = findViewById(R.id.ivdob);
-        login = findViewById(R.id.btlogin);
         signup = findViewById(R.id.btsignup);
         gender = findViewById(R.id.gender);
         state = findViewById(R.id.spinner_state);
@@ -190,13 +190,10 @@ public class  SignupActivity extends AppCompatActivity {
                     });
                 }
             }
+
+
         });
-        login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                onBackPressed();
-            }
-        });
+
     }
     private void cityDataSet(int i) {
         arrayList = new ArrayList<>();
@@ -259,16 +256,16 @@ public class  SignupActivity extends AppCompatActivity {
             }
         }
     }
-    public void ShowHideconPass(View view){
-        if (view.getId() == R.id.show_conpass_btn){
+    public void ShowHideconPass(View v){
+        if (v.getId() == R.id.show_conpass_btn){
 
             if (password.getTransformationMethod().equals(PasswordTransformationMethod.getInstance())) {
-                ((ImageView) (view)).setImageResource(R.drawable.ic_baseline_visibility_off_24);
+                ((ImageView) (v)).setImageResource(R.drawable.ic_baseline_visibility_off_24);
 
                 //Show Password
                 password.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
             } else {
-                ((ImageView) (view)).setImageResource(R.drawable.ic_baseline_remove_red_eye_24);
+                ((ImageView) (v)).setImageResource(R.drawable.ic_baseline_remove_red_eye_24);
 
                 //Hide Password
                 password.setTransformationMethod(PasswordTransformationMethod.getInstance());
